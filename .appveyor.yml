@@ -6,7 +6,7 @@ branches:
   only:
     - master
 
-cache: [node_modules]
+cache: false
 
 install:
   - npm install
