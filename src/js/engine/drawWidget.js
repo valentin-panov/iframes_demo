@@ -13,6 +13,7 @@ export default function drawWidget() {
       <div class="message_box_container">
       <div class="message_box_title">Message from iFrame:</div>
       <div id="message_box" class="message_box"></div>
+      <div id="xss_box"></div>
 </div>
       <iframe id="test_iframe" src='${process.env.BASE_URL}/public/card.html' class="iframe_el"/>
     </div>

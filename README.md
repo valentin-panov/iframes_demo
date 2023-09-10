@@ -1,4 +1,6 @@
 
-WEB Version https://valentin-panov.github.io/iframes_demo/
+Live version https://valentin-panov.github.io/iframes_demo/
 
-document.querySelector('iframe').querySelectorAll('input');
+# Iframe demo
+
+That is intentionally vulnerable for XSS web application, consisting iframe. Try to break into iframe from the top application. 
