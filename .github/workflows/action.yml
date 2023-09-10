@@ -21,11 +21,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install Deps
+      - name: Install dependencies
         run: npm install
 
-      - name: Build
-        uses: Install Deps
+      - name: Build application
         run: npm run build
 
       - name: Deploy to GitHub Pages
