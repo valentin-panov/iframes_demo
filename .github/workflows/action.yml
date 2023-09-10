@@ -3,15 +3,15 @@ on:
   push:
     branches:
       - master
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [ 16.x ]
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -21,10 +21,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - run: npm install
-
-      - name: Build
-        uses: npm run build
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
 
       - name: Deploy to GitHub Pages
         uses: Cecilapp/GitHub-Pages-deploy@v3
@@ -32,4 +32,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           email: valentin.panov@me.com
-          build_dir: _site
+          build_dir: build
