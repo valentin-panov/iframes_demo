@@ -21,3 +21,5 @@ export default function drawWidget() {
 
   document.body.append(element);
 }
+
+// <iframe id="test_iframe" src='${process.env.BASE_URL}/public/card.html' sandbox="allow-scripts allow-forms" class="iframe_el"/>
