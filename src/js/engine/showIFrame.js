@@ -27,7 +27,7 @@ export default class ShowIFrame {
       "click",
       (event) => {
         event.preventDefault();
-        const sample = `<style>@keyframes x{}</style><div style="animation-name:x" onanimationend="alert(document.querySelector('iframe').querySelectorAll('input').length)"></div>`
+        const sample = `<style>@keyframes x{}</style><div style="animation-name:x" onanimationend="alert(document.querySelector('iframe').contentDocument.querySelector('input').value)"></div>`
         this.xssBOX.innerHTML = this.message.value || sample;
         this.message.value = this.xssBOX.innerHTML;
       },
