@@ -33,4 +33,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           email: valentin.panov@me.com
-          build_dir: build
+          build_dir: dist
