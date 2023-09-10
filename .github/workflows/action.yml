@@ -25,6 +25,7 @@ jobs:
         run: npm install
 
       - name: Build
+        uses: Install Deps
         run: npm run build
 
       - name: Deploy to GitHub Pages
