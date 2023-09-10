@@ -2,21 +2,21 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const Dotenv = require('dotenv-webpack');
 
 
 // configure source and distribution folder paths
 const srcFolder = 'src';
 const distFolder = 'build';
-const publicFolder = 'public';
 
-module.exports = {
+module.exports = (_, argv) => {
+  return {
   devtool: 'source-map',
   // entry point for application
   entry: {
     app: path.join(__dirname, srcFolder, 'index.js'),
   },
   output: {
-    publicPath: path.resolve(__dirname, publicFolder),
     path: path.resolve(__dirname, distFolder),
     // ... next 2 lines we r fighting with Error: Universal Chunk Loading is not implemented yet at EnableChunkLoadingPlugin.apply
     // chunkLoading: false,
@@ -69,9 +69,12 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: 'public', to: 'public' }
-    ])
+    ]),
+    new Dotenv({
+      path: `./.env.${argv.mode === "production" ? "prd" : "dev"}`,
+    })
   ],
   devServer: {
     port: 9000,
   },
-};
+}}
