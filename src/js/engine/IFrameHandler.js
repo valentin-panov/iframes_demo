@@ -1,6 +1,6 @@
 import drawWidget from "./drawWidget";
 
-export default class ShowIFrame {
+export default class IFrameHandler {
   constructor() {
     drawWidget();
     this.message = document.querySelector("#input_message");
