@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // configure source and distribution folder paths
 const srcFolder = 'src';
-const distFolder = 'dist';
+const distFolder = 'build';
 
 module.exports = {
   devtool: 'source-map',
