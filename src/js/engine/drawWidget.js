@@ -15,7 +15,7 @@ export default function drawWidget() {
       <div id="message_box" class="message_box"></div>
       <div id="xss_box"></div>
 </div>
-      <iframe id="test_iframe" src='${process.env.BASE_URL}/public/card.html' class="iframe_el"/>
+      <iframe id="test_iframe" src='${process.env.BASE_URL}/public/card.html' sandbox="allow-scripts allow-forms" class="iframe_el"/>
     </div>
 
   </div>`;
