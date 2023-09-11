@@ -1,4 +1,4 @@
-import IFrameHandler from "./engine/IFrameHandler";
+import IFrameHandler from "./engine/iFrameHandler";
 
 function app() {
   const iFrameHandler = new IFrameHandler();
